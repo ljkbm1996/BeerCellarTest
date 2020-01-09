@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap');
+html, body {
+  background-image: url("https://fsa.zobj.net/crop.php?r=Qa-s9rDgTYjpGjLvs_P_u9KVCLheYsBMzobOipF0WrNHuLw6jbdYU742j-8FHQT62Hz-ArHrzbML3SjK0XaziQ9GWxIeT8BlYJ5ub6JKRzerbFedu8lCmlqmRANQHB1NJe_v4K2uKTIBb148");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+}
+
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.raleway {
+  font-family: 'Raleway', sans-serif;
+}
+
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}

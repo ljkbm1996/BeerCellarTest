@@ -1,0 +1,68 @@
+<div class="dashboard container-fluid">
+  <div class="header">
+    <fa-icon class="logo" [icon]="faBeer" size="2x"></fa-icon>
+    <span class="raleway">Beer Cellar</span>
+  </div>
+  <div class="content">
+    <div class="backdrop">
+      <h1>
+        <p class="raleway">Browse over our comprehensive list of high-quality beers that you can purchase online!</p>
+      </h1>
+      <div class="row">
+        <div class="dropdown col-1">
+          <button *ngIf="pageNumbers?.length > 0" class="btn btn-secondary dropdown-toggle" type="button"
+            id="pageMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{currentPage}} of {{pageNumbers.length}}
+          </button>
+          <div class="dropdown-menu" aria-labelledby="pageMenuButton">
+            <a *ngFor="let page of pageNumbers" class="dropdown-item" (click)="setCurrentPage(page)">{{page}}</a>
+          </div>
+        </div>
+        <div class="dropdown col-1">
+          <button *ngIf="pageNumbers?.length > 0" class="btn btn-secondary dropdown-toggle" type="button"
+            id="sortByButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Sort By:
+          </button>
+          <div class="dropdown-menu" aria-labelledby="sortByButton">
+            <a class="dropdown-item" (click)="sortBy('name')">Name</a>
+            <a class="dropdown-item" (click)="sortBy('abv')">ABV</a>
+            <a class="dropdown-item" (click)="sortBy('createDate')">Date of Creation</a>
+          </div>
+        </div>
+        <div class="dropdown col-1">
+            <button *ngIf="pageNumbers?.length > 0" class="btn btn-secondary dropdown-toggle" type="button"
+              id="categoryButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Category: 
+            </button>
+            <div class="dropdown-menu" aria-labelledby="categoryButton">
+              <a class="dropdown-item" (click)="categorize('All')">All</a>
+              <a *ngFor="let category of categories" class="dropdown-item" (click)="categorize(category?.name)">{{category?.name}}</a>
+            </div>
+          </div>
+      </div>
+    </div>
+    <ng-template [ngIf]="beers != undefined && beers != null && !isLoading">
+      <div class="row row-cols-1 row-cols-md-3 align-items-center justify-content-left">
+        <div *ngFor="let beer of beers.beerData; let i = index" class="col mb-5">
+          <div class="card h-100" data-toggle="modal" data-target="#detailsModal" (click)="setCurrentBeer(i)">
+            <img class="card-img-top" [src]="beer.labels ? beer.labels.medium : img">
+            <div class="card-body">
+              <div class="roboto card-title">
+                {{beer.nameDisplay}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template [ngIf]="beers === null || beers === undefined">
+      <div class="spinner">
+        <fa-icon [icon]="spinner" size="7x" [spin]="true"></fa-icon>
+      </div>
+    </ng-template>
+    <app-beer-detail class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-hidden="true"
+      [beerName]="currentBeer?.name" [beerAbv]="currentBeer?.abv" [beerCategory]="currentBeer?.style?.category.name"
+      [beerDescription]="currentBeer?.style?.description" [beerCreateDate]="currentBeer?.createDate">
+    </app-beer-detail>
+  </div>
+</div>
