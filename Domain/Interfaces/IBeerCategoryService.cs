@@ -7,5 +7,7 @@
     public interface IBeerCategoryService
     {
         Task<ICollection<BeerCategory>> GetBeerCategoryAsync();
+
+        Task<ICollection<BeerCategory>> InsertBeerCategoryAsync(BeerCategory category);
     }
 }

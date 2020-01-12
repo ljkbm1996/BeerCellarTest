@@ -5,8 +5,10 @@
 
     public interface IBeerGateway
     {
-        Task<Beer> GetBeers();
+        Task<Beer> GetBeersAsync();
 
         Task<Beer> GetBeersByPageAsync(int pageNumber);
+
+        Task InsertBeerAsync(BeerData data, int page);
     }
 }

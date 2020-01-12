@@ -5,11 +5,13 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaganiWineCellarProject", "TaganiWineCellarProject\TaganiWineCellarProject.csproj", "{CC996B9E-EB86-42E1-9F41-F54807CCC74A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{A6D1B33F-B692-4001-8FC3-EB992F4B97F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Domain\Core.csproj", "{A6D1B33F-B692-4001-8FC3-EB992F4B97F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{686E49A4-EEB7-46A7-8131-DF383EE008F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{686E49A4-EEB7-46A7-8131-DF383EE008F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{2AE66231-B054-4E9B-8002-40FE390366E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{2AE66231-B054-4E9B-8002-40FE390366E4}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Data", "Data\Data.sqlproj", "{D608EEAA-1ACA-443E-83DF-F30B27CED6E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,12 @@ Global
 		{2AE66231-B054-4E9B-8002-40FE390366E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AE66231-B054-4E9B-8002-40FE390366E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AE66231-B054-4E9B-8002-40FE390366E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D608EEAA-1ACA-443E-83DF-F30B27CED6E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D608EEAA-1ACA-443E-83DF-F30B27CED6E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D608EEAA-1ACA-443E-83DF-F30B27CED6E0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D608EEAA-1ACA-443E-83DF-F30B27CED6E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D608EEAA-1ACA-443E-83DF-F30B27CED6E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D608EEAA-1ACA-443E-83DF-F30B27CED6E0}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

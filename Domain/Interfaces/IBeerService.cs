@@ -5,8 +5,10 @@
 
     public interface IBeerService
     {
-        Task<Beer> GetBeers();
+        Task<Beer> GetBeersAsync();
 
         Task<Beer> GetBeersByPageAsync(string page);
+
+        Task InsertBeerAsync(Beer beer);
     }
 }

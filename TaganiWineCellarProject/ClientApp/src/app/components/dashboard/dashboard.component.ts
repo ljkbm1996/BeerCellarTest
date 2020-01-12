@@ -7,6 +7,8 @@ import { Subscription, of } from 'rxjs';
 import { finalize, map, distinct } from 'rxjs/operators';
 import { BeerData } from 'src/app/models/beer-data';
 import { BeerCategory } from 'src/app/models/beer-category';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AddBeerModalComponent } from '../add-beer-modal/add-beer-modal.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -25,7 +27,8 @@ export class DashboardComponent implements OnInit {
   img = 'https://redi.eu/wp-content/uploads/2015/08/not-available-300x217.png';
   beerSubscription: Subscription;
   isLoading = false;
-  constructor(private beerService: BeerService) { }
+
+  constructor(private beerService: BeerService, private modalService: NgbModal) { }
 
   ngOnInit() {
     this.setCategories();
@@ -110,5 +113,10 @@ export class DashboardComponent implements OnInit {
           this.beers = result;
         });
     }
+  }
+
+  openAddBeerModal() {
+    const modalRef = this.modalService.open(AddBeerModalComponent);
+    modalRef.componentInstance.pageNumber = this.currentPage;
   }
 }

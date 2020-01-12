@@ -1,6 +1,7 @@
 namespace TaganiWineCellarProject
 {
     using System;
+    using Core.Interfaces;
     using Domain.Interfaces;
     using Infrastructure.Gateways;
     using Microsoft.AspNetCore.Builder;
@@ -90,12 +91,16 @@ namespace TaganiWineCellarProject
         {
             services.AddTransient<IBeerCategoryGateway, BeerCategoryGateway>();
             services.AddTransient<IBeerGateway, BeerGateway>();
+            services.AddTransient<IBeerStylesGateway, BeerStylesGateway>();
+            services.AddTransient<IBeerLabelsGateway, BeerLabelsGateway>();
         }
 
         public static void RegisterServices(ref IServiceCollection services)
         {
             services.AddTransient<IBeerCategoryService, BeerCategoryService>();
             services.AddTransient<IBeerService, BeerService>();
+            services.AddTransient<IBeerStylesService, BeerStylesService>();
+            services.AddTransient<IBeerLabelsService, BeerLabelsService>();
         }
     }
 }

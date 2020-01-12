@@ -4,6 +4,9 @@ namespace Domain.Models
 {
     public class BeerLabels
     {
+        [JsonProperty("id")]
+        public int Id { get; set; }
+
         [JsonProperty("icon")]
         public string Icon { get; set; }
 

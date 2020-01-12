@@ -27,4 +27,9 @@ export class BeerService {
     const url = `${this.appSettings.API_BASE_URL}api/beer-category`;
     return this.httpClient.get<Array<BeerCategory>>(url);
   }
+
+  public InsertBeer(beer: Beer): Observable<void> {
+    const url = `${this.appSettings.API_BASE_URL}api/`;
+    return this.httpClient.post<void>(url, beer);
+  }
 }

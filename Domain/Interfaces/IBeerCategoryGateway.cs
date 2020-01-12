@@ -7,5 +7,7 @@
     public interface IBeerCategoryGateway
     {
         Task<ICollection<BeerCategory>> GetBeerCategoryAsync();
+
+        Task<ICollection<BeerCategory>> InsertBeerCategoryAsync(BeerCategory category);
     }
 }

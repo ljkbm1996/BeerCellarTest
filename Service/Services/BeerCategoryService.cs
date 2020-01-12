@@ -18,5 +18,10 @@
         {
             return await this.beerCategoryGateway.GetBeerCategoryAsync();
         }
+
+        public async Task<ICollection<BeerCategory>> InsertBeerCategoryAsync(BeerCategory category)
+        {
+            return await this.beerCategoryGateway.InsertBeerCategoryAsync(category);
+        }
     }
 }
